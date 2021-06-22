@@ -60,19 +60,14 @@ INSERT INTO Acesso(TipoUsario) VALUES
 	('4', 'Beta', 'Boa', 'chave inglesa', '2', '1');
 
 
-select  IdCandidatura, Vaga.Titulo, Candidato.NomeAluno from Candidatura 
- inner join Vaga on Candidatura.IdCandidatura = Vaga.IdVaga
- inner join Candidato on Candidatura.IdCandidatura = Candidato.IdCandidato
- go
+select  Equipamento.*, Sala.Andar AS EquipamentoSala, Andar from Sala
+ inner join Equipamento on Sala.IdSala = Equipamento.IdEquipamento;
+
  
 
- select IdEstagio, Vaga.IdVaga, Vaga.Titulo, Candidato.IdCandidato, Candidato.NomeAluno, DataInicio, DataFim from Estagio
-inner join Vaga on Estagio.IdEstagio = Vaga.IdVaga
-inner join Candidato on Estagio.IdEstagio = Candidato.IdCandidato
+
+
+
+select * from Equipamento where IdSala = 2
 go
 
-
-select * from Vaga where IdTipoCurso = 1
-go
-
-select * from Vaga
